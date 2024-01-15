@@ -42,7 +42,7 @@ function updateCity(event) {
     "A"
   )}</small></div>
   </div>
-  <a href="https://worldclock-project-anna.netlify.app/">All cities</a>
+  <a href="index.html">All cities</a>
   `;
 })};
 
