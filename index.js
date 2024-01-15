@@ -24,9 +24,14 @@ if(losAngelesElement){
 }}
 
 function updateCity(event){
-    setInterval(function(){
+    
     let cityTimeZone = event.target.value;
-    cityName = cityTimeZone.replace('_', ' ').split("/")[1];
+    if(cityTimeZone == "now"){
+        cityTimezone = moment.tz.guess();
+        console.log(cityTimeZone);
+    }
+
+    let cityName = cityTimeZone.replace('_', ' ').split("/")[1];
     let cityTime = moment().tz(cityTimeZone);
     let citiesElement = document.querySelector("#cities");
     citiesElement.innerHTML =  `
@@ -41,7 +46,7 @@ function updateCity(event){
     )}</small></div>
     </div>
     `;
-})}; 
+}; 
 
 setInterval(updateTime, 1000); 
 
